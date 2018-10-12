@@ -1,1 +1,7 @@
+# startjava ignore file
+
+# Compilated java classes
 *.class
+
+# My notes 
+*.txt

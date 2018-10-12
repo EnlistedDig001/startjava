@@ -6,16 +6,12 @@ public class Player {
 		return playerName;
 	}
 
-	public void setPlayerGuessNumber(int guessedNumber) {
+	public void setPlayerGuessNum(int guessedNumber) {
 		playerGuessNumber = guessedNumber;
 	}
 
-	public int getPlayerGuessNumber() {
+	public int getPlayerGuessNum() {
 		return playerGuessNumber;
-	}
-
-	public void playersRegistration() {
-		System.out.println("Enter player 1 name, then enter player 2 name on the next line.");
 	}
 
 	public void Player(String playerName) {
