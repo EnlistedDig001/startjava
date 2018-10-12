@@ -14,7 +14,7 @@ public class Player {
 		return playerGuessNumber;
 	}
 
-	public void Player(String playerName) {
+	public Player(String playerName) {
 		this.playerName = playerName;
 	}
 }
