@@ -7,13 +7,13 @@ public class CalculatorTest {
 		Calculator myCalculator = new Calculator();
 
 		System.out.println("Input first number:");
-		myCalculator.setFirstNumber( Integer.parseInt( scan.nextLine()));
+		myCalculator.setFirstNumber( Double.parseDouble( scan.nextLine()));
 
 		System.out.println("Input math sign:");
 		myCalculator.setMathSign(scan.nextLine ());
 
 		System.out.println("Input second number:");
-		myCalculator.setSecondNumber( Integer.parseInt(scan.nextLine()));	
+		myCalculator.setSecondNumber( Double.parseDouble(scan.nextLine()));	
 		
 		myCalculator.сalculateResult();
 	}
