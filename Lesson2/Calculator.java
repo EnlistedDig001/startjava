@@ -5,33 +5,33 @@ public class Calculator {
 	private double secondNumber;
 	private String mathSign;
 
-	public void setFirstNumber(double num){
-		firstNumber = num;
+	public void setFirstNumber(double firstNumber){
+		this.firstNumber = firstNumber;
 	}
 
 	public double getFirstNumber(){
 		return firstNumber;
 	}
 
-	public void setSecondNumber(double num){
-		secondNumber = num;
+	public void setSecondNumber(double secondNumber) {
+		this.secondNumber = secondNumber;
 	}
 
-	public double getSecondNumber(){
+	public double getSecondNumber() {
 		return secondNumber;
 	}
 
-	public void setMathSign(String sign){
-		mathSign = sign;
+	public void setMathSign(String mathSign) {
+		this.mathSign = mathSign;
 	}
 
-	public String getMathSign(){
+	public String getMathSign() {
 		return mathSign;
 	}
 
  	public void сalculateResult() {
  		switch (mathSign) {
-		case "+":	
+		case "+":
 			System.out.println(firstNumber + secondNumber);
 			break;
 		case "-":	
@@ -50,7 +50,11 @@ public class Calculator {
 			if (secondNumber == 0) {
 				System.out.println(1);
 			} else {
-				System.out.println(Math.pow(firstNumber, secondNumber));
+				double firstNumberCopy = firstNumber;
+				for (double i = 2; i <= secondNumber ; i++ ) {
+					firstNumber = firstNumber * firstNumberCopy;
+				 }
+				 System.out.println(firstNumber); 
 			}
 			break;
 		default:

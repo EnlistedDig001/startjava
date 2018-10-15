@@ -1,20 +1,22 @@
 public class Player {
-	private String playerName;
-	private int playerGuessNumber;
+	private String name;
+	private int number;
 
-	public String getPlayerName() {
-		return playerName;
+	public Player(String name) {
+		this.name = name;
 	}
 
-	public void setPlayerGuessNum(int guessedNumber) {
-		playerGuessNumber = guessedNumber;
+	public String getName() {
+		return name;
 	}
 
-	public int getPlayerGuessNum() {
-		return playerGuessNumber;
+	public void setNumber(int number) {
+		this.number = number;
 	}
 
-	public Player(String playerName) {
-		this.playerName = playerName;
+	public int getNumber() {
+		return number;
 	}
+
+	
 }
