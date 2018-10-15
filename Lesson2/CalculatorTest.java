@@ -5,7 +5,7 @@ public class CalculatorTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Calculator myCalculator = new Calculator();
-		char userWantsToContinue;
+		char userAnswer;
 		do {
 			System.out.println("Input first number:");
 			myCalculator.setFirstNumber(scan.nextDouble());
@@ -18,14 +18,11 @@ public class CalculatorTest {
 			
 			myCalculator.сalculateResult();
 			do {
-				System.out.println( "Do you want to start over ? y/n");
-				userWantsToContinue = scan.next().charAt(0);
+				System.out.println("Do you want to start over ? y/n");
+				userAnswer = scan.next().charAt(0);
 
-			} while ( !(userWantsToContinue =='y') && !(userWantsToContinue == 'n')); 
+			} while (!(userAnswer =='y') && !(userAnswer == 'n')); 
 		
-		} while (userWantsToContinue == 'y');
-
+		} while (userAnswer == 'y');
 	}
-
-	
 }

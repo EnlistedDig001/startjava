@@ -50,11 +50,11 @@ public class Calculator {
 			if (secondNumber == 0) {
 				System.out.println(1);
 			} else {
-				double firstNumberCopy = firstNumber;
-				for (double i = 2; i <= secondNumber ; i++ ) {
-					firstNumber = firstNumber * firstNumberCopy;
+				double result = firstNumber;
+				for (double i = 2; i <= secondNumber; i++) {
+					result *= firstNumber;
 				 }
-				 System.out.println(firstNumber); 
+				 System.out.println(result); 
 			}
 			break;
 		default:
