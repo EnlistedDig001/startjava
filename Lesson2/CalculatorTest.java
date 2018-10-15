@@ -5,25 +5,25 @@ public class CalculatorTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Calculator myCalculator = new Calculator();
-		String userWantsToContinue;
+		char userWantsToContinue;
 		do {
 			System.out.println("Input first number:");
-			myCalculator.setFirstNumber(Double.parseDouble( scan.nextLine()));
+			myCalculator.setFirstNumber(scan.nextDouble());
 
 			System.out.println("Input math sign:");
-			myCalculator.setMathSign(scan.nextLine());
+			myCalculator.setMathSign(scan.next().charAt(0));
 
 			System.out.println("Input second number:");
-			myCalculator.setSecondNumber(Double.parseDouble(scan.nextLine()));	
+			myCalculator.setSecondNumber(scan.nextDouble());	
 			
 			myCalculator.сalculateResult();
 			do {
 				System.out.println( "Do you want to start over ? y/n");
-				userWantsToContinue = scan.nextLine();
+				userWantsToContinue = scan.next().charAt(0);
 
-			} while ( !(userWantsToContinue.equals("y")) && !(userWantsToContinue.equals("n"))); 
+			} while ( !(userWantsToContinue =='y') && !(userWantsToContinue == 'n')); 
 		
-		} while (userWantsToContinue.equals("y"));
+		} while (userWantsToContinue == 'y');
 
 	}
 

@@ -3,7 +3,7 @@ import java.lang.*;
 public class Calculator {
 	private double firstNumber;
 	private double secondNumber;
-	private String mathSign;
+	private char mathSign;
 
 	public void setFirstNumber(double firstNumber){
 		this.firstNumber = firstNumber;
@@ -21,32 +21,32 @@ public class Calculator {
 		return secondNumber;
 	}
 
-	public void setMathSign(String mathSign) {
+	public void setMathSign(char mathSign) {
 		this.mathSign = mathSign;
 	}
 
-	public String getMathSign() {
+	public char getMathSign() {
 		return mathSign;
 	}
 
  	public void сalculateResult() {
  		switch (mathSign) {
-		case "+":
+		case '+':
 			System.out.println(firstNumber + secondNumber);
 			break;
-		case "-":	
+		case '-':	
 			System.out.println(firstNumber - secondNumber);
 			break;
-		case "/":	
+		case '/':	
 			System.out.println(firstNumber / secondNumber);
 			break;
-		case "*":	
+		case '*':	
 			System.out.println(firstNumber * secondNumber);
 			break;
-		case "%":	
+		case '%':	
 			System.out.println(firstNumber % secondNumber);
 			break;
-		case "^":	
+		case '^':	
 			if (secondNumber == 0) {
 				System.out.println(1);
 			} else {
