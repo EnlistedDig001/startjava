@@ -9,7 +9,7 @@ public class Calculator {
 		this.firstNumber = firstNumber;
 	}
 
-	public double getFirstNumber(){
+	public double getFirstNumber() {
 		return firstNumber;
 	}
 
