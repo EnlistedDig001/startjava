@@ -8,56 +8,6 @@ public class Jaeger {
 	private int strength;
 	private int armor;
 
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-	public void setModelName(String model) {
-		modelName = model;
-	}
-	public void setMark(String mark) {
-		this.mark = mark;
-	}
-	public void setOrigin(String origin) {
-		this.origin = origin;
-	}
-	public void setHeight(float height) {
-		this.height = height;
-	}
-	public void setWeight(float weight) {
-		this.weight = weight;
-	}
-	public void setSpeed(int speed) {
-		this.speed = speed;
-	}
-	public void setArmor(int armor) {
-		this.armor = armor;
-	}
-
-	public int getStrength() {
-		return strength;
-	}
-	public String getModelName() {
-		return modelName;
-	}
-	public String getMark() {
-		return mark;
-	}
-	public String getOrigin() {
-		return origin;
-	}
-	public float getHeight() {
-		return height;
-	}
-	public float getWeight() {
-		return weight;
-	}
-	public int getSpeed() {
-		return speed;
-	}
-	public int getArmor() {
-		return armor;
-	}
-
 	public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed, int strength, int armor) {
 		this.strength = strength;
 		this.modelName = modelName;
@@ -69,21 +19,87 @@ public class Jaeger {
 		this.armor = armor;
 	}
 
-	boolean drift() {
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
+
+	public int getStrength() {
+		return strength;
+	}
+
+	public void setModelName(String model) {
+		modelName = model;
+	}
+
+	public String getModelName() {
+		return modelName;
+	}
+
+	public void setMark(String mark) {
+		this.mark = mark;
+	}
+
+	public String getMark() {
+		return mark;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+	public String getOrigin() {
+		return origin;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
+	}
+
+	public float getHeight() {
+		return height;
+	}
+
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
+
+	public float getWeight() {
+		return weight;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setArmor(int armor) {
+		this.armor = armor;
+	}
+
+	public int getArmor() {
+		return armor;
+	}
+
+	
+
+	public boolean drift() {
 		System.out.println(modelName + " entering drift mode!");
 		return true;
 	}
 
-	void move() {
+	public void move() {
 		System.out.println(modelName + " moved " + speed + " steps forward.");		
 	}
 
-	String scanKaiju() {
+	public String scanKaiju() {
 		System.out.println(modelName + " scanned kaiju. It's Honeybuddy!");
 		return("Honeybuddy");
 	}
 
-	void useVortexCannon() {
+	public void useVortexCannon() {
 		System.out.println(modelName + " Пиу-пиу-пиу with " + strength + " damage!");
 	}
 }
