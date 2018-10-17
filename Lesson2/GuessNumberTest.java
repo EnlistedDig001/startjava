@@ -3,17 +3,19 @@ import java.util.Scanner;
 public class GuessNumberTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		GuessNumber guessNumber = new GuessNumber();
 		String userAnswer;
+		Player player1 = new Player();
+		Player player2 = new Player();
+		GuessNumber guessNumber = new GuessNumber(player1, player2);
 
 		do {
 			System.out.println("\n" + "Enter first player name:");
-			Player player1 = new Player(scan.nextLine());
+			player1.setName(scan.nextLine());	
 
 			System.out.println("Enter second player name:");
-			Player player2 = new Player(scan.nextLine());
+			player2.setName(scan.nextLine());			
 
-			guessNumber.startGame(player1, player2);
+			guessNumber.startGame();
 			do {
 				System.out.println("\n" + "Do you want to start over ? y/n");
 				userAnswer = scan.nextLine();
