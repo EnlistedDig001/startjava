@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class GuessNumber {
 	Random rand = new Random();
 	Scanner scan = new Scanner(System.in);
-	String goToNextLine = System.getProperty("line.separator");
 	private int computerRandomNum;
 
 	private void generateRandomNum() {
@@ -18,26 +17,20 @@ public class GuessNumber {
 			return true;
 
 		} else if (player.getNumber() < computerRandomNum) {
-			System.out.println(goToNextLine + player.getName() + "'s number is less.");
+			System.out.println("\n" + player.getName() + "'s number is less.");
 			return false;
 			
 		} else {
-			System.out.println(goToNextLine + player.getName() + "'s number is greater.");
+			System.out.println("\n" + player.getName() + "'s number is greater.");
 			return false;
 		}
 	}
 
-	public void startGame() {
-		System.out.println(goToNextLine + "Enter first player name:");
-			Player player1 = new Player(scan.nextLine());
-
-			System.out.println("Enter second player name:");
-			Player player2 = new Player(scan.nextLine());
-
+	public void startGame(Player player1, Player player2) {
 			generateRandomNum();
 
 			do {
-				System.out.println(goToNextLine + player1.getName() + ": enter you answer:");
+				System.out.println("\n" + player1.getName() + ": enter you answer:");
 				player1.setNumber(Integer.parseInt(scan.nextLine()));
 
 				System.out.println(player2.getName() + ": enter you answer:");
@@ -46,11 +39,11 @@ public class GuessNumber {
 			} while ( !(checkPlayerNum(player1)) && !(checkPlayerNum(player2)) );
 
 			if (player1.getNumber() == player2.getNumber() ) {
-				System.out.println(goToNextLine + "Both players was right!");
+				System.out.println("\n" + "Both players was right!");
 			} else if (checkPlayerNum(player1)) {
-				System.out.println(goToNextLine + player1.getName() + " wins!");
+				System.out.println("\n" + player1.getName() + " wins!");
 			} else {
-				System.out.println(goToNextLine + player2.getName() + " wins!");
+				System.out.println("\n" + player2.getName() + " wins!");
 			}
 
 			
