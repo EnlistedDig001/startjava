@@ -47,15 +47,10 @@ public class Calculator {
 			System.out.println(firstNumber % secondNumber);
 			break;
 		case '^':
-			int result;	
-			if (secondNumber == 0) {
-				result = 1;
-			} else {	
-				result = firstNumber;
-				for (int i = 2; i <= secondNumber; i++) {
-					result *= firstNumber;
-				 }
-			}
+			int result = 1;
+			for (int i = 1; i <= secondNumber; i++) {
+				result *= firstNumber;
+			 }
 			System.out.println(result);
 			break;
 		default:
