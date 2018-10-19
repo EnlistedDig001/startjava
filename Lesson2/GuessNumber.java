@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class GuessNumber {
 	Random rand = new Random();
 	Scanner scan = new Scanner(System.in);
-	Player player1 = new Player();
-	Player player2 = new Player();
+	Player player1;
+	Player player2;
 	private int computerRandomNum;
 	private byte winnerNumber;
+
 
 	public GuessNumber(Player player1, Player player2) {
 		this.player1 = player1;
@@ -34,7 +35,7 @@ public class GuessNumber {
 
 			} while (winnerNumber == 0);
 
-			if (player1.getNumber() == player2.getNumber() ) {
+			if (player1.getNumber() == player2.getNumber()) {
 				System.out.println("\n" + "Both players was right!");
 			} else if (winnerNumber == 1) {
 				System.out.println("\n" + player1.getName() + " wins!");
