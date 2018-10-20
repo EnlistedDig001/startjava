@@ -2,13 +2,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-	Random rand = new Random();
-	Scanner scan = new Scanner(System.in);
-	Player player1;
-	Player player2;
-	private int computerRandomNum;
-	private byte winnerNumber;
-
+	private Random rand = new Random();
+	private Scanner scan = new Scanner(System.in);
+	private Player player1;
+	private Player player2;
+	private int computerRandomNumber;
 
 	public GuessNumber(Player player1, Player player2) {
 		this.player1 = player1;
@@ -16,47 +14,37 @@ public class GuessNumber {
 	}
 
 	public void startGame() {
-			generateRandomNum();
+		generateRandomNum();
 
-			do {
-				winnerNumber = 0;
+		do {
+			System.out.println("\n" + player1.getName() + ": enter you answer:");
+			player1.setNumber(scan.nextInt());
 
-				System.out.println("\n" + player1.getName() + ": enter you answer:");
-				player1.setNumber(scan.nextInt());
+			System.out.println(player2.getName() + ": enter you answer:");
+			player2.setNumber(scan.nextInt());
 
-				System.out.println(player2.getName() + ": enter you answer:");
-				player2.setNumber(scan.nextInt());
+		} while (!player1.isWinner() && !player2.isWinner());
 
-				if (checkPlayerNum(player1)) {
-					winnerNumber = 1;
-				} else if (checkPlayerNum(player2)) {
-					winnerNumber = 2;
-				}
-
-			} while (winnerNumber == 0);
-
-			if (player1.getNumber() == player2.getNumber()) {
-				System.out.println("\n" + "Both players was right!");
-			} else if (winnerNumber == 1) {
-				System.out.println("\n" + player1.getName() + " wins!");
-			} else {
-				System.out.println("\n" + player2.getName() + " wins!");
-			}
-
-			
+		if (player1.getNumber() == player2.getNumber()) {
+			System.out.println("\n" + "Both players was right!");
+		} else if (player1.isWinner()) {
+			System.out.println("\n" + player1.getName() + " wins!");
+		} else {
+			System.out.println("\n" + player2.getName() + " wins!");
+		}
 	}
 
 	private void generateRandomNum() {
 		System.out.println("Computer guessed the number from 0 to 100. What number is it?");
-
-		computerRandomNum = rand.nextInt(100);
+		computerRandomNumber = rand.nextInt(100);
 	}
 
 	private boolean checkPlayerNum(Player player) {
-		if (player.getNumber() == computerRandomNum) {
+		if (player.getNumber() == computerRandomNumber) {
+			player.setWinner(true);
 			return true;
 
-		} else if (player.getNumber() < computerRandomNum) {
+		} else if (player.getNumber() < computerRandomNumber) {
 			System.out.println("\n" + player.getName() + "'s number is less.");
 			return false;
 			
