@@ -5,3 +5,7 @@
 
 # My notes 
 *.txt
+
+# Folder with compiled .class files
+out/
+
