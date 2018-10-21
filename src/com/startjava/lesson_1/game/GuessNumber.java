@@ -17,7 +17,6 @@ public class GuessNumber {
 				System.out.println("Ваше число меньше загаданного.");			
 			} else if (userGuessNum > computerGuessNum) {
 				System.out.println("Ваше число больше загаданного.");
-		
 			}
 		} while (userGuessNum != computerGuessNum);
 		
