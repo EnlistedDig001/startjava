@@ -19,9 +19,12 @@ public class GuessNumber {
 		do {
 			System.out.println("\n" + player1.getName() + ": enter you answer:");
 			player1.setNumber(scan.nextInt());
+ 			checkPlayerNum(player1);
 
 			System.out.println(player2.getName() + ": enter you answer:");
 			player2.setNumber(scan.nextInt());
+			checkPlayerNum(player2);
+
 
 		} while (!player1.isWinner() && !player2.isWinner());
 

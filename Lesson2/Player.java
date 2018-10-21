@@ -1,7 +1,7 @@
 public class Player {
 	private String name;
 	private int number;
-	private boolean winner;
+	private boolean isWinner;
 
 	public Player(String name) {
 		this.name = name;
