@@ -24,11 +24,11 @@ public class Player {
 	}
 
 	public boolean isWinner() {
-		return winner;
+		return isWinner;
 	}
 
-	public void setWinner(boolean winner) {
-		this.winner = winner;
+	public void setWinner(boolean isWinner) {
+		this.isWinner = isWinner;
 	}
 
 	
