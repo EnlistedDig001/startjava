@@ -1,7 +1,6 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
-import java.io.*;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
@@ -10,19 +9,15 @@ public class CalculatorTest {
 		char userAnswer;
 
 		do {
-			System.out.println("Enter first number:");
-			myCalculator.setFirstNumber(scan.nextInt());
+		    System.out.println("Enter math expression like 2 + 2 ");
+		    myCalculator.setMathExpression(scan.nextLine());
 
-			System.out.println("Enter math sign:");
-			myCalculator.setMathSign(scan.next().charAt(0));
 
-			System.out.println("Enter second number:");
-			myCalculator.setSecondNumber(scan.nextInt());	
-			
-			myCalculator.сalculateResult();
+			myCalculator.calculateResult();
 			do {
 				System.out.println("Do you want to start over ? y/n");
 				userAnswer = scan.next().charAt(0);
+				scan.nextLine();
 
 			} while (userAnswer != 'y' && userAnswer != 'n'); 
 		
