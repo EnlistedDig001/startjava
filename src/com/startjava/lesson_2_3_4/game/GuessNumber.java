@@ -23,38 +23,32 @@ public class GuessNumber {
                 System.out.println(10-currentTry + " lives left");
             }
 
-            System.out.println(player1.getName() + ": enter you answer:");
-            player1.setNumber(scan.nextInt());
-
-            System.out.println(player2.getName() + ": enter you answer:");
-            player2.setNumber(scan.nextInt());
-
-            checkPlayerNum(player1);
-            checkPlayerNum(player2);
-
-            if (player1.isWinner() || player2.isWinner()) {
-                break;
+            if ((currentTry % 2) == 0) {
+                inputPlayerNum(player1);
+                checkPlayerNum(player1);
+                if (player1.isWinner()) {
+                    System.out.println("Player " + player1.getName() + " wins with " + (10 - currentTry) + " lives left!");
+                    printPlayersNums();
+                    break;
+                }
+            } else {
+                inputPlayerNum(player2);
+                checkPlayerNum(player2);
+                if (player2.isWinner()) {
+                    System.out.println("Player " + player2.getName() + " wins with " + (10 - currentTry) + " lives left!");
+                    printPlayersNums();
+                    break;
+                }
             }
         }
-
-		if (player1.isWinner() && player2.isWinner()) {
-			System.out.println("Both players was right!");
-		} else if (player1.isWinner()) {
-			System.out.println("Player " + player1.getName() + " wins with " + (10 - currentTry) + " lives left!");
-		} else if (player2.isWinner()) {
-			System.out.println("Player " + player2.getName() + " wins with " + (10 - currentTry) + " lives left!");
-		} else {
-		    System.out.println("You have no lives left. Insert coin to continue.");
+        if (currentTry == 10) {
+            System.out.println("You have no lives left. Insert coin to continue.");
         }
-
-        printPlayersAnswers();
-
 	}
 
 	private void generateRandomNum() {
 		System.out.println("Computer guessed the number from 0 to 100. What number is it?");
 		computerRandomNumber = rand.nextInt(100);
-
 		System.out.println("Note: you have only 10 tries.");
 	}
 
@@ -73,7 +67,12 @@ public class GuessNumber {
 		}
 	}
 
-	private void printPlayersAnswers() {
+	private void inputPlayerNum(Player player) {
+        System.out.println(player.getName() + ": enter you answer:");
+        player.setNumber(scan.nextInt());
+    }
+
+	private void printPlayersNums() {
         System.out.println("Player 1 & 2 answers:");
         for (int i = 1; i <= (currentTry) ; i++) {
             System.out.println(player1.getNumbersHistoryElemet(i) + " " + player2.getNumbersHistoryElemet(i));
