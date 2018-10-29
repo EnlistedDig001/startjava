@@ -8,6 +8,9 @@ public class GuessNumber {
 	private Player player2;
 	private int computerRandomNumber;
 	private int currentTry;
+	private static final int MAX_TRIES = 10;
+	private static final int FEWER_TRIES = 7;
+	private static final int RAND_MAX = 1;
 
 	public GuessNumber(Player player1, Player player2) {
 		this.player1 = player1;
@@ -17,43 +20,46 @@ public class GuessNumber {
 	public void startGame() {
         generateRandomNum();
 
-        for (currentTry = 0; currentTry < 10 ; currentTry++) {
+        for (currentTry = 0; currentTry < MAX_TRIES; currentTry++) {
 
-            if (currentTry >= 7) {
-                System.out.println(10-currentTry + " lives left");
+            if (currentTry >= FEWER_TRIES) {
+                System.out.println(MAX_TRIES - currentTry + " lives left");
             }
 
-            if ((currentTry % 2) == 0) {
-                inputPlayerNum(player1);
-                checkPlayerNum(player1);
-                if (player1.isWinner()) {
-                    System.out.println("Player " + player1.getName() + " wins with " + (10 - currentTry) + " lives left!");
-                    printPlayersNums();
-                    break;
-                }
-            } else {
-                inputPlayerNum(player2);
-                checkPlayerNum(player2);
-                if (player2.isWinner()) {
-                    System.out.println("Player " + player2.getName() + " wins with " + (10 - currentTry) + " lives left!");
-                    printPlayersNums();
-                    break;
-                }
+            inputPlayerNum(player1);
+            checkPlayerNum(player1);
+            if (player1.isWinner()) {
+                System.out.println("Player " + player1.getName() + " wins with " + (10 - currentTry) + " lives left!");
+                printPlayersNums();
+                break;
             }
+
+            inputPlayerNum(player2);
+            checkPlayerNum(player2);
+            if (player2.isWinner()) {
+                System.out.println("Player " + player2.getName() + " wins with " + (10 - currentTry) + " lives left!");
+                printPlayersNums();
+                break;
+            }
+
+
+
+
         }
-        if (currentTry == 10) {
+        if (currentTry == MAX_TRIES) {
             System.out.println("You have no lives left. Insert coin to continue.");
+            printPlayersNums();
         }
 	}
 
 	private void generateRandomNum() {
-		System.out.println("Computer guessed the number from 0 to 100. What number is it?");
-		computerRandomNumber = rand.nextInt(100);
+		System.out.println("Computer guessed the number from 0 to " + RAND_MAX + ". What number is it?");
+		computerRandomNumber = rand.nextInt(RAND_MAX);
 		System.out.println("Note: you have only 10 tries.");
 	}
 
 	private boolean checkPlayerNum(Player player) {
-		if (player.getNumber()  == computerRandomNumber) {
+		if (player.getNumber() == computerRandomNumber) {
 			player.setWinner(true);
 			return true;
 
@@ -74,8 +80,9 @@ public class GuessNumber {
 
 	private void printPlayersNums() {
         System.out.println("Player 1 & 2 answers:");
-        for (int i = 1; i <= (currentTry) ; i++) {
-            System.out.println(player1.getNumbersHistoryElemet(i) + " " + player2.getNumbersHistoryElemet(i));
+        
+        for (int i = 0; i < currentTry; i++) {
+        //currently not working
         }
     }
 
