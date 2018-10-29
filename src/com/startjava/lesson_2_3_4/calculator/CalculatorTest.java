@@ -10,10 +10,8 @@ public class CalculatorTest {
 
 		do {
 		    System.out.println("Enter math expression like 2 + 2 ");
-		    myCalculator.setMathExpression(scan.nextLine());
+			myCalculator.calculateResult(scan.nextLine());
 
-
-			myCalculator.calculateResult();
 			do {
 				System.out.println("Do you want to start over ? y/n");
 				userAnswer = scan.next().charAt(0);
