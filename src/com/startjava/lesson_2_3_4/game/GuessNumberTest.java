@@ -21,7 +21,7 @@ public class GuessNumberTest {
 				System.out.println("\n" + "Do you want to start over ? y/n");
 				userAnswer = scan.nextLine();
 
-			} while (!userAnswer.equals("y") && !userAnswer.equals("n")); 
+			} while (!userAnswer.equals("y".toLowerCase()) && !userAnswer.equals("n"));
 		} while (userAnswer.equals("y"));
 	}
 }
